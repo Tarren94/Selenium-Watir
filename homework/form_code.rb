@@ -3,18 +3,24 @@ require 'watir'
 class Form
 
     def initialize
-        @driver = Watir::Browser.new :chrome
+        @driver = Watir::Browser.new :chrome, profile: profile
         @driver.driver.manage.timeouts.implicit_wait = 10
+        
     end
 
     def go_to_form_page
         @driver.goto 'http://toolsqa.com/automation-practice-form/'
     end
 
+    def current_url
+        @driver.url
+    end
+
+
     def partial_link
         pl = @driver.link xpath: '//*[@id="content"]/form/fieldset/div[1]/a[1]'
         pl.exists?
-        pl.click
+        pl
     end
 
     def first_name
@@ -67,16 +73,16 @@ class Form
         check.set?
     end
 
-    # def download_framework
-    #     download_directory = "#{Dir.pwd}/desktop/SDET9/downloads"
-    #     download_directory.tr!('/', '\\') if Selenium::WebDriver::Platform.windows?
+    def download_framework
+        download_directory = "#{Dir.pwd}/desktop/SDET9/downloads"
+        download_directory.tr!('/', '\\') if Selenium::WebDriver::Platform.windows?
 
-    #     profile = Selenium::WebDriver::Chrome::Profile.new
-    #     profile[ 'download.prompt_for_download'] = false
-    #     profile['download.default_directory'] = download_directory
+        profile = Selenium::WebDriver::Chrome::Profile.new
+        profile[ 'download.prompt_for_download'] = false
+        profile['download.default_directory'] = download_directory
 
-    #     b = Watir::Browser.new :chrome, profile: profile
-    # end
+        
+    end
 
     def automation_tool1
         check = @driver.checkbox id: 'tool-0'
