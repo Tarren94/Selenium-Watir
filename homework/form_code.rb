@@ -5,7 +5,6 @@ class Form
     def initialize
         @driver = Watir::Browser.new :chrome
         @driver.driver.manage.timeouts.implicit_wait = 10
-        
     end
 
     def go_to_form_page

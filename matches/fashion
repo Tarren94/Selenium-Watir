@@ -1,0 +1,17 @@
+TC1: Create an account with MF
+
+step 1: navigate to http://www.matchesfashion.com/
+step 2: click sign in button
+step 3: create an account (title, fname, lname, email, pword, confirm pword, country, number)
+step 4: De-select 'If you would prefer not to receive news and special promotions by email from MATCHESFASHION.COM, please untick the box'
+step 5: click Create and account
+
+TC2: Verify account is created and signed in
+Pre-condition: Ensure no one is signed into the website (THIS COULD BE STEPS AS WELL, WE NEED TO DECIDE)
+
+step 1: navigate to http://www.matchesfashion.com/
+step 2: click sign in button
+step 3: input Current Customer (email, pword)
+step 4: click Login
+step 5: click account name (top left)
+step 6: click My account from drop down list
